@@ -1,0 +1,258 @@
+Java's String class provides a variety of methods to manipulate and handle string data. Here are some of the most commonly used methods, along with examples:
+
+1. charAt(int index)
+Returns the character at the specified index.
+
+java
+Copy code
+public class StringMethods {
+    public static void main(String[] args) {
+        String str = "Hello, World!";
+        char ch = str.charAt(1);
+        System.out.println("Character at index 1: " + ch);  // e
+    }
+}
+2. compareTo(String anotherString)
+Compares two strings lexicographically.
+
+java
+Copy code
+public class StringMethods {
+    public static void main(String[] args) {
+        String str1 = "apple";
+        String str2 = "banana";
+        int result = str1.compareTo(str2);
+        System.out.println("Comparison result: " + result);  // Negative value
+    }
+}
+3. concat(String str)
+Concatenates the specified string to the end of this string.
+
+java
+Copy code
+public class StringMethods {
+    public static void main(String[] args) {
+        String str1 = "Hello";
+        String str2 = " World";
+        String str3 = str1.concat(str2);
+        System.out.println("Concatenated string: " + str3);  // Hello World
+    }
+}
+4. contains(CharSequence s)
+Checks if the string contains the specified sequence of char values.
+
+java
+Copy code
+public class StringMethods {
+    public static void main(String[] args) {
+        String str = "Hello, World!";
+        boolean contains = str.contains("World");
+        System.out.println("Contains 'World': " + contains);  // true
+    }
+}
+5. endsWith(String suffix)
+Checks if the string ends with the specified suffix.
+
+java
+Copy code
+public class StringMethods {
+    public static void main(String[] args) {
+        String str = "Hello, World!";
+        boolean endsWith = str.endsWith("World!");
+        System.out.println("Ends with 'World!': " + endsWith);  // true
+    }
+}
+6. equals(Object anObject)
+Compares this string to the specified object.
+
+java
+Copy code
+public class StringMethods {
+    public static void main(String[] args) {
+        String str1 = "Hello";
+        String str2 = "Hello";
+        boolean isEqual = str1.equals(str2);
+        System.out.println("Strings are equal: " + isEqual);  // true
+    }
+}
+7. equalsIgnoreCase(String anotherString)
+Compares this string to another string, ignoring case considerations.
+
+java
+Copy code
+public class StringMethods {
+    public static void main(String[] args) {
+        String str1 = "Hello";
+        String str2 = "hello";
+        boolean isEqual = str1.equalsIgnoreCase(str2);
+        System.out.println("Strings are equal (ignore case): " + isEqual);  // true
+    }
+}
+8. indexOf(String str)
+Returns the index within this string of the first occurrence of the specified substring.
+
+java
+Copy code
+public class StringMethods {
+    public static void main(String[] args) {
+        String str = "Hello, World!";
+        int index = str.indexOf("World");
+        System.out.println("Index of 'World': " + index);  // 7
+    }
+}
+9. isEmpty()
+Checks if the string is empty.
+
+java
+Copy code
+public class StringMethods {
+    public static void main(String[] args) {
+        String str = "";
+        boolean isEmpty = str.isEmpty();
+        System.out.println("String is empty: " + isEmpty);  // true
+    }
+}
+10. length()
+Returns the length of the string.
+
+java
+Copy code
+public class StringMethods {
+    public static void main(String[] args) {
+        String str = "Hello, World!";
+        int length = str.length();
+        System.out.println("Length of string: " + length);  // 13
+    }
+}
+11. replace(char oldChar, char newChar)
+Returns a new string resulting from replacing all occurrences of oldChar in this string with newChar.
+
+java
+Copy code
+public class StringMethods {
+    public static void main(String[] args) {
+        String str = "Hello, World!";
+        String newStr = str.replace('o', 'a');
+        System.out.println("Replaced string: " + newStr);  // Hella, Warld!
+    }
+}
+12. split(String regex)
+Splits this string around matches of the given regular expression.
+
+java
+Copy code
+public class StringMethods {
+    public static void main(String[] args) {
+        String str = "Hello, World!";
+        String[] parts = str.split(", ");
+        for (String part : parts) {
+            System.out.println(part);
+        }
+    }
+}
+13. substring(int beginIndex, int endIndex)
+Returns a new string that is a substring of this string.
+
+java
+Copy code
+public class StringMethods {
+    public static void main(String[] args) {
+        String str = "Hello, World!";
+        String substr = str.substring(7, 12);
+        System.out.println("Substring: " + substr);  // World
+    }
+}
+14. toLowerCase()
+Converts all of the characters in this string to lower case.
+
+java
+Copy code
+public class StringMethods {
+    public static void main(String[] args) {
+        String str = "Hello, World!";
+        String lowerStr = str.toLowerCase();
+        System.out.println("Lower case string: " + lowerStr);  // hello, world!
+    }
+}
+15. toUpperCase()
+Converts all of the characters in this string to upper case.
+
+java
+Copy code
+public class StringMethods {
+    public static void main(String[] args) {
+        String str = "Hello, World!";
+        String upperStr = str.toUpperCase();
+        System.out.println("Upper case string: " + upperStr);  // HELLO, WORLD!
+    }
+}
+16. trim()
+Returns a copy of the string with leading and trailing whitespace omitted.
+
+java
+Copy code
+public class StringMethods {
+    public static void main(String[] args) {
+        String str = "   Hello, World!   ";
+        String trimmedStr = str.trim();
+        System.out.println("Trimmed string: " + trimmedStr);  // Hello, World!
+    }
+}
+17. valueOf(int i)
+Returns the string representation of the int argument.
+
+java
+Copy code
+public class StringMethods {
+    public static void main(String[] args) {
+        int num = 123;
+        String str = String.valueOf(num);
+        System.out.println("String value of int: " + str);  // 123
+    }
+}
+18. startsWith(String prefix)
+Checks if this string starts with the specified prefix.
+
+java
+Copy code
+public class StringMethods {
+    public static void main(String[] args) {
+        String str = "Hello, World!";
+        boolean startsWith = str.startsWith("Hello");
+        System.out.println("Starts with 'Hello': " + startsWith);  // true
+    }
+}
+19. endsWith(String suffix)
+Checks if this string ends with the specified suffix.
+
+java
+Copy code
+public class StringMethods {
+    public static void main(String[] args) {
+        String str = "Hello, World!";
+        boolean endsWith = str.endsWith("World!");
+        System.out.println("Ends with 'World!': " + endsWith);  // true
+    }
+}
+20. toCharArray()
+Converts this string to a new character array.
+
+java
+Copy code
+public class StringMethods {
+    public static void main(String[] args) {
+        String str = "Hello, World!";
+        char[] charArray = str.toCharArray();
+        for (char ch : charArray) {
+            System.out.print(ch + " ");
+        }
+        // Output: H e l l o ,   W o r l d !
+    }
+}
+These methods cover a wide range of string operations in Java. You can use them to manipulate and handle strings efficiently in your applications.
+
+
+
+
+
+

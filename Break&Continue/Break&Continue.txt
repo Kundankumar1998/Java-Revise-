@@ -1,0 +1,95 @@
+In Java, `break` and `continue` are control flow statements that help manage the flow of loops (like `for`, `while`, and `do-while` loops). Here's an explanation of each:
+
+### `break` Statement
+The `break` statement is used to exit from the current loop or switch statement. When a `break` statement is encountered inside a loop, the loop is terminated, and control jumps to the statement immediately following the loop.
+
+#### Example with a Loop:
+```java
+public class BreakExample {
+    public static void main(String[] args) {
+        for (int i = 0; i < 10; i++) {
+            if (i == 5) {
+                break; // Exit the loop when i is 5
+            }
+            System.out.println(i);
+        }
+        System.out.println("Loop terminated.");
+    }
+}
+```
+Output:
+```
+0
+1
+2
+3
+4
+Loop terminated.
+```
+In this example, the loop will print numbers from 0 to 4 and then terminate when `i` equals 5.
+
+### `continue` Statement
+The `continue` statement skips the current iteration of the loop and proceeds to the next iteration. When a `continue` statement is encountered, the rest of the code inside the loop is skipped for the current iteration, and the loop's control moves to the next iteration.
+
+#### Example with a Loop:
+```java
+public class ContinueExample {
+    public static void main(String[] args) {
+        for (int i = 0; i < 10; i++) {
+            if (i == 5) {
+                continue; // Skip the current iteration when i is 5
+            }
+            System.out.println(i);
+        }
+        System.out.println("Loop completed.");
+    }
+}
+```
+Output:
+```
+0
+1
+2
+3
+4
+6
+7
+8
+9
+Loop completed.
+```
+In this example, the loop will print numbers from 0 to 9, but it will skip printing the number 5.
+
+### Usage in Nested Loops
+When used in nested loops, the `break` and `continue` statements only affect the innermost loop they are in.
+
+#### Example with Nested Loops:
+```java
+public class NestedLoopExample {
+    public static void main(String[] args) {
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 3; j++) {
+                if (i == 1 && j == 1) {
+                    break; // Breaks the inner loop when i is 1 and j is 1
+                }
+                System.out.println("i: " + i + ", j: " + j);
+            }
+        }
+        System.out.println("Nested loops terminated.");
+    }
+}
+```
+Output:
+```
+i: 0, j: 0
+i: 0, j: 1
+i: 0, j: 2
+i: 1, j: 0
+i: 2, j: 0
+i: 2, j: 1
+i: 2, j: 2
+Nested loops terminated.
+```
+In this example, the `break` statement will only terminate the inner loop when `i` is 1 and `j` is 1. The outer loop continues running.
+
+These statements are very useful for controlling the flow of loops based on specific conditions, helping to make your code more efficient and readable.

@@ -1,0 +1,207 @@
+# Java Access Modifiers
+
+**Access modifiers** 
+In Java help to restrict the scope of a class, constructor, variable, method, or data member.
+They provide security and control over the accessibility of these elements depending on the modifier used.
+This article covers the different types of Java Access Modifiers and their uses.
+
+### Types of Access Modifiers in Java
+
+Java offers four types of access modifiers:
+
+1. **Default** – No keyword required
+2. **Private**
+3. **Protected**
+4. **Public**
+
+### 1. Default Access Modifier
+
+When no access modifier is specified for a class, method, or data member, it is said to have the 
+**default access modifier**. Elements with the default access modifier are accessible only within the same package.
+
+#### Example:
+
+**Program 1:**
+
+```java
+// Java program to illustrate default modifier 
+package p1; 
+
+// Class Geek is having Default access modifier 
+class Geek { 
+    void display() { 
+        System.out.println("Hello World!"); 
+    } 
+} 
+```
+
+**Program 2:**
+
+```java
+// Java program to illustrate error while using class from different package with default modifier 
+package p2; 
+import p1.*; 
+
+// This class is having default access modifier 
+class GeekNew { 
+    public static void main(String args[]) { 
+        // Accessing class Geek from package p1 
+        Geek obj = new Geek(); 
+        obj.display(); 
+    } 
+}
+```
+
+**Output:**  
+Compile-time error
+
+### 2. Private Access Modifier
+
+The private access modifier is specified using the keyword `private`.
+ Methods or data members declared as private are accessible only within 
+ the class in which they are declared. Other classes, even within the same
+  package, cannot access these members.
+
+**Note:** Top-level classes or interfaces cannot be declared as private because
+ private means "only visible within the enclosing class."
+
+#### Example:
+
+```java
+// Java program to illustrate error while using class 
+   from different package with Private Modifier
+package p1;
+
+// Class A
+class A {
+    private void display() {
+        System.out.println("GeeksforGeeks");
+    }
+}
+
+// Class B
+class B {
+    public static void main(String args[]) {
+        A obj = new A();
+        // Trying to access private method of another class
+        obj.display();
+    }
+}
+```
+
+**Output:**  
+Error: `display()` has private access in A
+
+### 3. Protected Access Modifier
+
+The **protected access modifier** is specified using the keyword `protected`. 
+Protected methods or data members are accessible within the same package or subclasses in different packages.
+
+#### Example:
+
+**Program 1:**
+
+```java
+// Java Program to Illustrate Protected Modifier
+package p1;
+
+// Class A
+public class A {
+    protected void display() {
+        System.out.println("GeeksforGeeks");
+    }
+}
+```
+
+**Program 2:**
+
+```java
+// Java program to illustrate protected modifier
+package p2;
+
+// importing all classes in package p1
+import p1.*; 
+
+// Class B is subclass of A
+class B extends A {
+    public static void main(String args[]) {
+        B obj = new B();
+        obj.display();
+    }
+}
+```
+
+**Output:**  
+GeeksforGeeks
+
+### 4. Public Access Modifier
+
+The public access modifier is specified using the keyword `public`. 
+It has the widest scope among all other access modifiers. Public classes,
+methods, or data members are accessible from everywhere in the program.
+
+#### Example:
+
+**Program 1:**
+
+```java
+// Java program to illustrate public modifier 
+package p1; 
+public class A { 
+    public void display() { 
+        System.out.println("GeeksforGeeks"); 
+    } 
+} 
+```
+
+**Program 2:**
+
+```java
+package p2;
+import p1.*;
+class B {
+    public static void main(String args[]) {
+        A obj = new A();
+        obj.display();
+    }
+}
+```
+
+**Output:**  
+GeeksforGeeks
+
+### Important Points:
+
+- Use the most restrictive access level that makes sense for a particular member.
+ Typically, use `private` unless there is a good reason not to.
+- Avoid public fields except for constants.
+
+---
+
+### Algorithm to Use Access Modifiers in Java
+
+1. **Define a class:** Create a class that represents the object you want to manage.
+2. **Define instance variables:** Within the class, define instance variables that
+ represent the data you want to manage.
+3. **Specify an access modifier:** For each instance variable, specify an access
+ modifier that determines its visibility.
+   - **Private:** For variables accessible only within the class.
+   - **Protected:** For variables accessible within the class and its subclasses.
+   - **Public:** For variables accessible from anywhere.
+4. **Use accessor and mutator methods:** Use getter (accessor) and setter (mutator) methods 
+to manage access to the variables, even if they have a public access modifier.
+
+### FAQs on Access Modifiers
+
+1. **What are access modifiers in Java?**  
+   Access modifiers in Java are keywords used for controlling the access of methods, constructors,
+    fields, and methods in a class.
+
+2. **What is void in Java?**  
+   `Void` in Java is used to specify that a method does not return a value.
+
+3. **What are the 12 modifiers in Java?**  
+   The 12 modifiers in Java are `public`, `private`, `protected`, `default`, `static`, `final`, `synchronized`,
+    `abstract`, `native`, `strictfp`, `transient`, and `volatile`.
+
+---

@@ -1,0 +1,106 @@
+Loops in Java are used to repeatedly execute a block of code as long as a specified condition is true. There are several types of loops in Java:
+
+1. **for loop**
+2. **while loop**
+3. **do-while loop**
+4. **enhanced for loop** (also known as for-each loop)
+
+### 1. `for` Loop
+
+The `for` loop is used when you know in advance how many times you want to execute a statement or a block of statements.
+
+**Syntax:**
+```java
+for (initialization; condition; increment/decrement) {
+    // code to be executed
+}
+```
+
+**Example:**
+```java
+public class ForLoopExample {
+    public static void main(String[] args) {
+        for (int i = 0; i < 5; i++) {
+            System.out.println("i = " + i);
+        }
+    }
+}
+```
+
+### 2. `while` Loop
+
+The `while` loop is used when you want to execute a block of code as long as a specified condition is true. The condition is evaluated before executing the loop's body.
+
+**Syntax:**
+```java
+while (condition) {
+    // code to be executed
+}
+```
+
+**Example:**
+```java
+public class WhileLoopExample {
+    public static void main(String[] args) {
+        int i = 0;
+        while (i < 5) {
+            System.out.println("i = " + i);
+            i++;
+        }
+    }
+}
+```
+
+### 3. `do-while` Loop
+
+The `do-while` loop is similar to the `while` loop, but it evaluates the condition after executing the loop's body. This means that the loop will always execute at least once.
+
+**Syntax:**
+```java
+do {
+    // code to be executed
+} while (condition);
+```
+
+**Example:**
+```java
+public class DoWhileLoopExample {
+    public static void main(String[] args) {
+        int i = 0;
+        do {
+            System.out.println("i = " + i);
+            i++;
+        } while (i < 5);
+    }
+}
+```
+
+### 4. Enhanced `for` Loop (for-each Loop)
+
+The enhanced `for` loop is used to iterate over arrays or collections. It simplifies the code and avoids errors associated with managing loop counters.
+
+**Syntax:**
+```java
+for (type variable : array/collection) {
+    // code to be executed
+}
+```
+
+**Example:**
+```java
+public class ForEachLoopExample {
+    public static void main(String[] args) {
+        int[] numbers = {1, 2, 3, 4, 5};
+        for (int number : numbers) {
+            System.out.println("number = " + number);
+        }
+    }
+}
+```
+
+### Summary
+
+- Use a `for` loop when you know the exact number of iterations.
+- Use a `while` loop when the number of iterations is not known and depends on a condition.
+- Use a `do-while` loop when you need the loop to execute at least once regardless of the condition.
+- Use an enhanced `for` loop to iterate over arrays or collections in a more readable and less error-prone way.
